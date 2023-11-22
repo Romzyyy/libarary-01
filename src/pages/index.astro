@@ -1,60 +1,81 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro'
+import Footer from '../components/Footer.astro'
+
+const response = await fetch('https://randomuser.me/api/');
+const data = await response.json();
+const randomUser = data.results[0];
 ---
 
 <Layout title="Dashboard">
-<main class="text-white font-[sans]">
-	<h1 class=" font-extrabold text-5xl ">Library Universe</h1>
-	<div class="flex flex-row mt-4 gap-4">
-		<img class="w-60 h-80 " src="sample.png" alt="cover">
-		<div class=" grid grid-cols-1 content-between">
-		<h1 class="font-bold text-2xl">Judul Buku</h1>
-		<p class="font-semibold text-lg">Nama penulis</p>
-		<p class="w-1/2 text-lg">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus alias blanditiis a fugit facilis saepe, vero deleniti atque consectetur est optio ullam aut accusamus esse animi eligendi molestiae, perferendis qui!. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus alias blanditiis a fugit facilis saepe, vero deleniti atque consectetur est optio ullam aut accusamus esse animi eligendi molestiae, perferendis qui.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus alias blanditiis a fugit facilis saepe.</p>
-		<p class="font-medium text-xl">tahun terbit</p>
+	<Navbar/>
+<main class="text-white font-[sans] px-20">
+	<div class="h-[460px] my-32">
+		<h1 class=" font-extrabold text-5xl">Library Universe</h1>
+		<div class="flex flex-row mt-12 gap-10">
+			<img class="w-60 h-80 " src="sample.png" alt="cover">
+			<div class=" grid grid-cols-1 content-between">
+			<h1 class="font-bold text-2xl">{randomUser.name.first}</h1>
+			<p class="font-semibold text-lg">{randomUser.login.username}</p>
+			<p class="w-1/2 text-lg">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus alias blanditiis a fugit facilis saepe, vero deleniti atque consectetur est optio ullam aut accusamus esse animi eligendi molestiae, perferendis qui!. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus alias blanditiis a fugit facilis saepe, vero deleniti atque consectetur est optio ullam aut accusamus esse animi eligendi molestiae, perferendis qui.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus alias blanditiis a fugit facilis saepe.</p>
+			<p class="font-medium text-xl">{randomUser.registered.date}</p>
+			</div>
 		</div>
 	</div>
-	<div class="m-4 flex flex-row justify-between">
-		<div class="w-fit">
+
+	<div class="grid grid-cols-5 gap-4 content-start">
+		<div class="w-fit my-10 my-10">
 			<img class="w-44 h-60" src="sample.png" alt="cover">
 			<p class="font-semibold">Judul</p>
 			<p>Tahun terbit</p>
 		</div>
-		<div class="w-fit">
+		<div class="w-fit my-10">
 			<img class="w-44 h-60" src="sample.png" alt="cover">
 			<p class="font-semibold">Judul</p>
 			<p>Tahun terbit</p>
 		</div>
-		<div class="w-fit">
+		<div class="w-fit my-10">
 			<img class="w-44 h-60" src="sample.png" alt="cover">
 			<p class="font-semibold">Judul</p>
 			<p>Tahun terbit</p>
 		</div>
-		<div class="w-fit">
+		<div class="w-fit my-10">
 			<img class="w-44 h-60" src="sample.png" alt="cover">
 			<p class="font-semibold">Judul</p>
 			<p>Tahun terbit</p>
 		</div>
-		<div class="w-fit">
+		<div class="w-fit my-10">
 			<img class="w-44 h-60" src="sample.png" alt="cover">
 			<p class="font-semibold">Judul</p>
 			<p>Tahun terbit</p>
 		</div>
-		<div class="w-fit">
+		<div class="w-fit my-10">
 			<img class="w-44 h-60" src="sample.png" alt="cover">
 			<p class="font-semibold">Judul</p>
 			<p>Tahun terbit</p>
 		</div>
-		<div class="w-fit">
+		<div class="w-fit my-10">
 			<img class="w-44 h-60" src="sample.png" alt="cover">
 			<p class="font-semibold">Judul</p>
 			<p>Tahun terbit</p>
 		</div>
-		<div class="w-fit">
+		<div class="w-fit my-10">
+			<img class="w-44 h-60" src="sample.png" alt="cover">
+			<p class="font-semibold">Judul</p>
+			<p>Tahun terbit</p>
+		</div>
+		<div class="w-fit my-10">
+			<img class="w-44 h-60" src="sample.png" alt="cover">
+			<p class="font-semibold">Judul</p>
+			<p>Tahun terbit</p>
+		</div>
+		<div class="w-fit my-10">
 			<img class="w-44 h-60" src="sample.png" alt="cover">
 			<p class="font-semibold">Judul</p>
 			<p>Tahun terbit</p>
 		</div>
 	</div>
 </main>
+<Footer/>
 </Layout>
