@@ -2,10 +2,6 @@
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro'
 import Footer from '../components/Footer.astro'
-
-const response = await fetch('https://randomuser.me/api/');
-const data = await response.json();
-const randomUser = data.results[0];
 ---
 
 <Layout title="Dashboard">
@@ -16,10 +12,10 @@ const randomUser = data.results[0];
 		<div class="flex flex-row mt-12 gap-10">
 			<img class="w-60 h-80 " src="sample.png" alt="cover">
 			<div class=" grid grid-cols-1 content-between">
-			<h1 class="font-bold text-2xl">{randomUser.name.first}</h1>
-			<p class="font-semibold text-lg">{randomUser.login.username}</p>
+			<h1 class="font-bold text-2xl">Judul Buku</h1>
+			<p class="font-semibold text-lg">Penulis</p>
 			<p class="w-1/2 text-lg tracking-wider">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus alias blanditiis a fugit facilis saepe, vero deleniti atque consectetur est optio ullam aut accusamus esse animi eligendi molestiae, perferendis qui!. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus alias blanditiis a fugit facilis saepe, vero deleniti atque consectetur est optio ullam aut accusamus esse animi eligendi molestiae.</p>
-			<p class="font-medium text-xl">{randomUser.registered.date}</p>
+			<p class="font-medium text-xl">Tahun terbit</p>
 			</div>
 		</div>
 	</div>
